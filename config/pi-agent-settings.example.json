@@ -1,0 +1,8 @@
+{
+  "defaultProvider": "example-provider",
+  "defaultModel": "example-model",
+  "defaultThinkingLevel": "high",
+  "enabledModels": [
+    "example-provider/example-model"
+  ]
+}

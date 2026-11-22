@@ -1,0 +1,24 @@
+# Merge this section into %CODEX_HOME%\config.toml.
+# The installer replaces the placeholders with actual Windows paths.
+
+# BEGIN CODEX_PI_KIT
+[mcp_servers.pi]
+command = '{{NODE_EXE}}'
+args = ['{{CODEX_HOME}}\mcp\pi-delegate-mcp-launcher.mjs']
+enabled = true
+startup_timeout_sec = 180
+tool_timeout_sec = 1800
+# Required by Codex CLI non-interactive sessions when execution approval is "never".
+# Review the delegated tool allowlist before enabling automatic MCP approval.
+default_tools_approval_mode = "approve"
+
+[mcp_servers.pi.env]
+PI_DELEGATE_STRICT_SCOPE = '1'
+PI_DELEGATE_ALLOW_TOOLS = 'bash,powershell,edit,write'
+# Optional:
+# PI_DELEGATE_MODEL = 'provider/model-id'
+# NODE_EXTRA_CA_CERTS = 'C:\path\to\corporate-root-ca.pem'
+# HTTP_PROXY = 'http://proxy.example:8080'
+# HTTPS_PROXY = 'http://proxy.example:8080'
+# NO_PROXY = '.corp.example.com,localhost,127.0.0.1'
+# END CODEX_PI_KIT
